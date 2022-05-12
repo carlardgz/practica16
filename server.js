@@ -29,6 +29,8 @@ app.post("/student", (req, res) => {
   res.send(`First name es: ${req.body.fname}, Last name es: ${req.body.lname}`);
 });
 
+//route handler para parsear peticiones que contienen un objeto JSON en el body
+//extrae el objeto y nos deja sus keys a nuestra disposición
 app.post("/personjson", express.json({ type: "*/*" }), (req, res) => {
   console.log("El objeto contiene: ", req.body);
   console.log("Nombre: ", req.body.firstname);
